@@ -1,9 +1,9 @@
 //dart:core - stores dart libraries
-import 'dart:core';
-main() {
-  //you can assign any value
-  var firstName = 'Angela';
-  //you cannot assign any other value apart from a string
-  String lastName = 'Nyabuti';
-  print( firstName + ' ' + lastName);
+//collecting input from a user
+import 'dart:io';
+
+void main(List<String> args) {
+  stdout.writeln('What is your name: ?');  
+  String? name = stdin.readLineSync(); //? allows to receive a null value from the user 
+  print('My name is $name');
 }

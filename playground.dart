@@ -1,19 +1,15 @@
-//operators
-//Null Aware Operator
-//(?.), (??), (??=) 
-
-//class
-class Num{
-  int num = 10;
-}
+//Conditional Statement
+//if else
+//switch case
 void main(List<String> args) {
-  var n = Num(); //object
-  int number;
+  int number = 99;
 
-//checking if n is null
-  if (n != null) {
-    number = n.num;
-    print(number);
+  if ( number % 2 == 0) {
+    print('Even');
+  } else if( number % 3 == 0){
+    print('Odd');
+  } else {
+    print('confused');
   }
   
 }

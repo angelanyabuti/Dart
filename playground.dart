@@ -1,41 +1,32 @@
-//loops
-//1. Standard for loop - similar to javascript
-//2. for-in loop
-//3. forEach Loop - hire order function takes another function as parameter
-//4. while loop
-//5. do...while loop
-
-///break statements used to terminate the loop
-///break and continue
+//Collection [List, Set, Map]
+//List - also array
+//spread operator - used to create a clone of a list - same as JS
+//set - prints unique items. Not repeated items
+//map - collection of key value pair of items 
 void main(List<String> args) { 
-  for (var i=1; i <= 10; i++) {
-    print(i);
+  List names = ['Jack', 'Jill'];
+  print(names[0]);
+  //checking the length of the list
+  print(names.length);
+
+  //copying a list to another variable
+  var names2 = [...names]; //spread operator
+  print(names2);
+
+  var halogens = {'fluorine', 'chlorine', 'fluorine'};
+
+  for (var x in halogens) {
+    print(x);
   }
 
-  var numbers = [1, 2, 3];
-
-  for (var n in numbers) {
-    print(n);
-  }
-
-  numbers.forEach( (n) => print(n));
-
-  int num = 5;
-
-  do{
-    print(num);
-    num -= 1;
-  }while (num > 0);
-
-  for (var i = 0; i < 10; i++){
-    if (i > 5) break;
-    print(i);
-  }
-
-  for (var i = 0; i < 10; i++) {
-    if (i % 2 == 0) continue;
-    print("Odd: $i");
-  }
+  //map
+  var gifts = {
+    //Key: Value
+    'first': 'partridge',
+    'second': 'turtledoves',
+    'fifth': 'golden rings'
+  };
+  print(gifts['fifth']);
 
 }
 

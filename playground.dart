@@ -1,32 +1,28 @@
-//Collection [List, Set, Map]
-//List - also array
-//spread operator - used to create a clone of a list - same as JS
-//set - prints unique items. Not repeated items
-//map - collection of key value pair of items 
+///Functions = each function is an object of class Function
+///Arrow function =>
+///Anonymous function - function with no name
+///Parameters named and positioned
 void main(List<String> args) { 
-  List names = ['Jack', 'Jill'];
-  print(names[0]);
-  //checking the length of the list
-  print(names.length);
+   showOutput(square(2));
+   showOutput(square(2.5));
 
-  //copying a list to another variable
-  var names2 = [...names]; //spread operator
-  print(names2);
+   var list = ['apples', 'bananas', 'oranges'];
 
-  var halogens = {'fluorine', 'chlorine', 'fluorine'};
+   list.forEach((item){
+    print(item);
+   });
 
-  for (var x in halogens) {
-    print(x);
-  }
-
-  //map
-  var gifts = {
-    //Key: Value
-    'first': 'partridge',
-    'second': 'turtledoves',
-    'fifth': 'golden rings'
-  };
-  print(gifts['fifth']);
+   print(sum(2,2));
 
 }
+
+dynamic square(var num) => num * num; //result automatically returns
+
+
+void showOutput(var msg) {
+  print(msg);
+}
+
+dynamic sum(var num1, var num2) => num1 + num2;
+
 

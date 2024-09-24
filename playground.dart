@@ -1,28 +1,39 @@
-///Functions = each function is an object of class Function
-///Arrow function =>
-///Anonymous function - function with no name
-///Parameters named and positioned
+//class
+
+class Person {
+  String name ='null';
+  int age = 0;
+
+  //constructor - created by using the name of the class
+  //automatically called whenn you instantiate an object
+  Person(String name, [int age = 18]) {
+    //this keyword - used to access object fields
+    this.name = name;
+    this.age = age;
+  }
+  //named constructor
+  Person.guest() {
+    name = 'Guest';
+    age = 18;
+  }
+
+  void showOutput() {
+    print(name);
+    print(age);
+  } 
+}
 void main(List<String> args) { 
-   showOutput(square(2));
-   showOutput(square(2.5));
+  Person person1 = Person('Angela');  
+  person1.showOutput();
 
-   var list = ['apples', 'bananas', 'oranges'];
+  var person2 = Person('Jack', 25);
+  person2.showOutput();
 
-   list.forEach((item){
-    print(item);
-   });
-
-   print(sum(2,2));
+  var person3 = Person.guest();
+  person3.showOutput();
 
 }
 
-dynamic square(var num) => num * num; //result automatically returns
 
-
-void showOutput(var msg) {
-  print(msg);
-}
-
-dynamic sum(var num1, var num2) => num1 + num2;
 
 

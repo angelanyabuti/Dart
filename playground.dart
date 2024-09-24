@@ -1,23 +1,35 @@
-///getters and setters - special methods that provide read and write access to object properties
-///each variable has a getter and a setter
-///
-class Rectangle {
-  num left, top, width, height;
+///Exception Handling
+///A feature in a programming language that helps us know if there is a runtime error or not
 
-  Rectangle(this.left, this.top, this.width, this.height);
-
-  //Define two calculated properties: right and bottom.
-  num get right => left + width;
-  set right(num value) => left = value - width;
-  num get bottom => top + height;
-  set bottom(num value) => top = value - height;
+int mustGreaterThanZero(int val){
+  if (val <=0 ) {
+    throw Exception('Value must be greater that zero'); //message
+  }
+  return val;
 }
 
+void letVerifyTheValue(var val) {
+  var valueVerification; //where we will asign the value
+
+  try {
+    //passing the value
+    valueVerification = mustGreaterThanZero(val);
+  }
+  //when a function throws an exception you have to catch it
+  catch(e) {
+    print(e);
+  }
+  finally {
+    if (valueVerification == null) {
+      print('Value is not accepted');
+    } else {
+      print('Value verified: $valueVerification');
+    }
+  }
+}
 void main(List<String> args) { 
-  var rect = Rectangle(3, 4, 20, 15);
-  print(rect.left);
-  rect.right = 12;
-  print(rect.left);
+  letVerifyTheValue(0);
+  
 
 }
 

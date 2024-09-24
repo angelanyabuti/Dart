@@ -1,36 +1,23 @@
-//class
+///getters and setters - special methods that provide read and write access to object properties
+///each variable has a getter and a setter
+///
+class Rectangle {
+  num left, top, width, height;
 
-class Person {
-  String name ='null';
-  int age = 0;
+  Rectangle(this.left, this.top, this.width, this.height);
 
-  //constructor - created by using the name of the class
-  //automatically called whenn you instantiate an object
-  Person(String name, [int age = 18]) {
-    //this keyword - used to access object fields
-    this.name = name;
-    this.age = age;
-  }
-  //named constructor
-  Person.guest() {
-    name = 'Guest';
-    age = 18;
-  }
-
-  void showOutput() {
-    print(name);
-    print(age);
-  } 
+  //Define two calculated properties: right and bottom.
+  num get right => left + width;
+  set right(num value) => left = value - width;
+  num get bottom => top + height;
+  set bottom(num value) => top = value - height;
 }
+
 void main(List<String> args) { 
-  Person person1 = Person('Angela');  
-  person1.showOutput();
-
-  var person2 = Person('Jack', 25);
-  person2.showOutput();
-
-  var person3 = Person.guest();
-  person3.showOutput();
+  var rect = Rectangle(3, 4, 20, 15);
+  print(rect.left);
+  rect.right = 12;
+  print(rect.left);
 
 }
 
